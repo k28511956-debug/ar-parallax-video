@@ -323,6 +323,65 @@
       background: #ffffff;
     }
 
+    .gallery {
+      background:
+        linear-gradient(180deg, #ffffff, #fff6e7),
+        linear-gradient(90deg, rgba(239, 70, 84, 0.08) 1px, transparent 1px);
+      background-size: auto, 40px 40px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .video-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: 0 18px 42px rgba(18, 61, 67, 0.12);
+    }
+
+    .video-card video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #10181c;
+      object-fit: contain;
+    }
+
+    .video-card-body {
+      padding: 18px;
+    }
+
+    .video-card h3 {
+      margin: 0;
+      color: var(--teal-deep);
+      font-size: 1.12rem;
+      line-height: 1.35;
+    }
+
+    .video-card p {
+      margin: 8px 0 14px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    .download-link {
+      display: inline-flex;
+      align-items: center;
+      min-height: 38px;
+      border: 1px solid rgba(18, 61, 67, 0.18);
+      border-radius: 8px;
+      padding: 0 12px;
+      color: var(--teal-deep);
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
     .scene-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -468,6 +527,7 @@
       }
 
       .scene-grid,
+      .video-grid,
       .share-layout {
         grid-template-columns: 1fr;
       }
@@ -554,6 +614,10 @@
         width: min(220px, 100%);
         margin: 0 auto;
       }
+
+      .video-card-body {
+        padding: 16px;
+      }
     }
   </style>
 </head>
@@ -565,6 +629,7 @@
     </a>
     <nav class="nav" aria-label="页面导航">
       <a href="#watch">AR 动效</a>
+      <a href="#gallery">作品视频</a>
       <a href="#motion">表情动作</a>
       <a href="#share">扫码播放</a>
     </nav>
@@ -598,6 +663,38 @@
             <source src="ar_parallax_loop12s.mp4" type="video/mp4">
             当前浏览器不支持 MP4 视频播放。
           </video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="section-inner">
+        <p class="section-kicker">More Video</p>
+        <h2 id="gallery-title">兰兰 IP 更多动态展示</h2>
+        <p class="section-lead">补充展示两段轻量视频内容，适合和主 AR 动效一起用于作品集、汇报页和扫码预览。</p>
+        <div class="video-grid">
+          <article class="video-card">
+            <video controls muted playsinline preload="metadata">
+              <source src="lanlan-share-1.mp4" type="video/mp4">
+              当前浏览器不支持 MP4 视频播放。
+            </video>
+            <div class="video-card-body">
+              <h3>动态展示 01</h3>
+              <p>延续兰兰 IP 的轻快动效节奏，用于补充主视觉之外的播放内容。</p>
+              <a class="download-link" href="lanlan-share-1.mp4" download>下载视频 01</a>
+            </div>
+          </article>
+          <article class="video-card">
+            <video controls muted playsinline preload="metadata">
+              <source src="lanlan-share-2.mp4" type="video/mp4">
+              当前浏览器不支持 MP4 视频播放。
+            </video>
+            <div class="video-card-body">
+              <h3>动态展示 02</h3>
+              <p>作为更多动作与场景延展展示，增强网站内容层次和可浏览性。</p>
+              <a class="download-link" href="lanlan-share-2.mp4" download>下载视频 02</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
